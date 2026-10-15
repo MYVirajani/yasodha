@@ -8,117 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f7f5ff;--surface:#fff;--ink:#1a1740;--muted:#5d5a85;--accent:#5b46e0;--accent2:#d8456a;--line:#dcd8f5;color-scheme:light;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14122b;--surface:#1d1a3d;--ink:#ece9ff;--muted:#a9a4d0;--accent:#9d8cff;--accent2:#ff8fa3;--line:#322e63;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#14122b;--surface:#1d1a3d;--ink:#ece9ff;--muted:#a9a4d0;--accent:#9d8cff;--accent2:#ff8fa3;--line:#322e63;color-scheme:dark}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
-*,*::before,*::after{box-sizing:border-box}
-#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "DM Sans",system-ui,sans-serif}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;gap:6px;height:60px;overflow-x:auto;scrollbar-width:none}
-nav .brand{font:800 1.2rem "Bricolage Grotesque",sans-serif;text-decoration:none;margin-right:auto;padding-right:16px}
-nav a.l{text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:999px;font-size:.95rem;white-space:nowrap}
-nav a.l:hover{color:var(--ink);background:var(--surface)}
-#theme{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font:500 .9rem "DM Sans",sans-serif;cursor:pointer}
-.layout{display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:start;padding:48px 24px 0}
-.content{min-width:0}
-.content .wrap{padding:0;max-width:none}
-.content section:first-child{padding-top:0;border-top:0}
-.profile{position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px);background:color-mix(in srgb,var(--surface) 92%,transparent);border:1px solid var(--line);border-radius:24px;padding:28px 24px;display:flex;flex-direction:column;gap:16px}
-.avatar{width:150px;height:150px;border-radius:50%;border:3px solid var(--accent);padding:4px;background:var(--bg);align-self:center;box-shadow:0 0 28px color-mix(in srgb,var(--accent) 45%,transparent)}
-.avatar img,.avatar div{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.avatar div{display:grid;place-items:center;font:800 2.6rem "Bricolage Grotesque",sans-serif;color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--bg))}
-.profile h1{font-size:1.9rem;letter-spacing:-.02em}
-.badge{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem;padding:6px 16px;border-radius:999px;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
-.badge i{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 8px #34d399}
-.dept{color:var(--muted);font-size:.98rem;margin:0}
-.profile hr{border:0;border-top:1px solid var(--line);width:100%;margin:2px 0}
-.info{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.info li{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:.98rem;word-break:break-word}
-.info a{text-decoration:none}.info a:hover{color:var(--ink)}
-.info svg,.cv svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.cv{display:flex;justify-content:center;align-items:center;gap:10px;text-decoration:none;font-weight:600;color:var(--accent);border:1px solid var(--line);border-radius:14px;padding:12px;background:color-mix(in srgb,var(--accent) 8%,transparent)}
-.cv:hover{border-color:var(--accent)}
-.hero h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:800;letter-spacing:-.03em}
-.hero .role{font:600 1.35rem/1.35 "Bricolage Grotesque",sans-serif;color:var(--accent);margin:18px 0 12px;max-width:30ch}
-.hero p{color:var(--muted);max-width:46ch;margin:0 0 28px}
-.btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px;border:2px solid var(--ink)}
-.btn.p{background:var(--ink);color:var(--bg)}
-.btn:hover{transform:translateY(-2px)}
-.graph{width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:8px}
-.graph .edge{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:5 6}
-.graph .node{fill:var(--bg);stroke:var(--accent);stroke-width:2}
-.graph text{font:600 13px "DM Sans",sans-serif;fill:var(--ink);text-anchor:middle}
-.graph .core{font:700 15px "Bricolage Grotesque",sans-serif;fill:var(--accent2)}
-.graph .dot{fill:var(--accent2)}
-.hero>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
-.hero>*:nth-child(2){animation-delay:.15s}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}}
-section{padding:64px 0;border-top:1px solid var(--line)}
-section>.wrap>h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:32px;letter-spacing:-.02em}
-.about{display:block}
-.about p{margin:0 0 14px;max-width:62ch}
-.facts{list-style:none;margin:0;padding:0;display:grid;gap:12px;align-content:start}
-.facts li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
-.facts b{display:block;font:700 1.5rem "Bricolage Grotesque",sans-serif;color:var(--accent)}
-.facts span{color:var(--muted);font-size:.92rem}
-.tl{border-left:2px solid var(--line);margin-left:6px;display:grid;gap:28px}
-.item{position:relative;padding-left:28px}
-.item::before{content:"";position:absolute;left:-8px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
-.item h3{font-size:1.3rem}
-.meta{color:var(--muted);font-size:.95rem;margin:2px 0 8px}
-.item ul{margin:8px 0 0;padding-left:20px;max-width:68ch}
-.item li{margin-bottom:6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:12px}
-.card h3{font-size:1.25rem}
-.card p{margin:0;color:var(--muted);font-size:.98rem}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.tag{font-size:.82rem;font-weight:500;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
-.card a.lnk{font-weight:600;color:var(--accent2)}
-.pill{display:inline-block;font-size:.85rem;font-weight:600;color:var(--accent2);border:1px solid var(--accent2);border-radius:999px;padding:2px 12px;align-self:flex-start}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
-.filters button{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:999px;font:500 .92rem "DM Sans",sans-serif;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.contact p{max-width:52ch;color:var(--muted)}
-.contact .mail{display:inline-block;font:800 clamp(1.6rem,5vw,3rem) "Bricolage Grotesque",sans-serif;color:var(--accent);text-decoration:none;margin:12px 0 28px;word-break:break-all}
-footer{padding:32px 0;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
-@media (max-width:900px){.layout{grid-template-columns:1fr;gap:24px;padding-top:32px}.profile{position:static}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero>*{animation:none}.btn:hover{transform:none}}
-</style>
+<link rel="stylesheet" href="style.css">
+<script>/* apply saved theme before first paint to avoid a flash */try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
 <header><div class="wrap"><nav aria-label="Main">
-<a class="brand" href="#top">Yasodha</a>
-<a class="l" href="#about">About</a><a class="l" href="#skills">Skills</a><a class="l" href="#experience">Experience</a><a class="l" href="#education">Education</a><a class="l" href="#publications">Publications</a><a class="l" href="#projects">Projects</a><a class="l" href="#awards">Achievements</a>
-<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-            </button>
+<a class="l" href="#about">About</a><a class="l" href="#experience">Experience</a><a class="l" href="#education">Education</a><a class="l" href="#publications">Publications</a><a class="l" href="#projects">Projects</a><a class="l" href="#awards">Achievements</a>
+<button id="theme" type="button" aria-label="Switch between light and dark theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
 </nav></div></header>
 <main id="top">
 <div class="layout">
@@ -127,13 +24,13 @@ footer{padding:32px 0;color:var(--muted);font-size:.92rem;border-top:1px solid v
 <h1>Yasodha Virajani</h1>
 <hr>
 <ul class="info" id="info"></ul>
-<a class="cv" id="cv" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>CV (PDF)</a>
+<a class="cv" id="cv" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg> RESUME</a>
 </aside>
 <div class="content">
 
 <section id="about"><div class="wrap"><h2>About</h2>
-<div class="about"><div id="bio"></div></div></div></section>
-<section id="skills"><div class="wrap"><h2>Technical skills</h2><div class="grid" id="skl"></div></div></section>
+<div class="about"><div id="bio"></div></div>
+<h3 class="sub">Technical skills</h3><div class="skills" id="skl"></div></div></section>
 <section id="experience"><div class="wrap"><h2>Experience</h2><div class="tl" id="exp"></div></div></section>
 <section id="education"><div class="wrap"><h2>Education</h2><div class="tl" id="edu"></div></div></section>
 <section id="publications"><div class="wrap"><h2>Publications</h2><div class="grid" id="pubs"></div></div></section>
@@ -143,93 +40,6 @@ footer{padding:32px 0;color:var(--muted);font-size:.92rem;border-top:1px solid v
 </main>
 <footer><div class="wrap">&copy; <span id="yr"></span> Yasodha Virajani. Galle, Sri Lanka.</div></footer>
 
-<script>
-/* EDIT HERE: everything on the page comes from this object. Items marked "Add" are placeholders. */
-const DATA={
-email:"yasodhavirajani@gmail.com",
-photo:"",cv:"#",loc:"Galle, Sri Lanka",
-links:[["GitHub","https://github.com/MYVirajani","github"],["LinkedIn","https://www.linkedin.com/in/yasodha-virajani-19217b287/","linkedin"]],
-bio:["Computer Engineering graduate with a strong foundation in AI-based application development. I have built predictive models and added intelligent features to software, with hands-on work in LLMs, RAG pipelines and computer vision.","I enjoy using AI to solve real-world problems and keep learning the latest techniques."],
-skills:[["Programming languages",["Python","C","C++","JavaScript","Dart"]],
-["AI and ML",["CNN","RNN","Transformers","RAG","Fine-tuning","Prompt engineering"]],
-["Frameworks and libraries",["TensorFlow","Scikit-learn","Hugging Face","LLaMA Factory","OpenCV","LangChain","FastAPI","Flask","Pandas","NumPy","Matplotlib","Seaborn","Streamlit"]],
-["Web and mobile",["React.js","Next.js","Node.js","Express.js","REST APIs","Flutter"]],
-["Databases",["MySQL","MongoDB","PostgreSQL","Firebase"]],
-["DevOps and tools",["Docker","Git","GitHub","Jupyter","Google Colab","n8n","Figma","Jira"]]],
-exp:[{t:"AI Intern",o:"Decode Labs",d:"Jun 2026 to Jul 2026",b:["Completed a structured series of AI/ML projects spanning NLP, deep learning and computer vision."]},
-{t:"Mobile Application Development Intern",o:"APIS Technologies",d:"Jul 2024 to Jan 2025",b:["Designed and implemented UI/UX for mobile applications, improving the user experience.","Developed and maintained Flutter apps with clean, efficient and reusable code.","Applied software engineering principles while working with teams on functionality, usability and design."]}],
-edu:[{t:"B.Sc. (Hons.) in Engineering, Computer Engineering",o:"Department of Electrical and Information Engineering, University of Ruhuna",d:"2021 to 2026 | GPA 3.41 / 4.00, Second Class Upper Division",b:["Core focus: Artificial Intelligence, Machine Learning and Software Engineering.","The full degree program was taught and assessed in English medium."]},
-{t:"G.C.E. Advanced Level Examination",o:"G/Ananda Central College, Elpitiya",d:"2017 to 2019",b:["Combined Mathematics, Chemistry and Physics, results AAB."]}],
-pubs:[{t:"Intelligent Exam Evaluation System with AI-Based Analytics",v:"International Research Conference on Emerging Concepts and Research in Integrated Sustainable Adaptation (ECRISA)",d:"Jan 2026"},
-{t:"Automated Grading of Diagram and Graph-Based Answers Using Vision-Based Large Language Models",v:"Artificial Intelligence in Multidisciplinary Applications (AIMDA) Conference",d:"Feb 2026"},
-{t:"A Multimodal AI Framework for Automated Grading of Digital and Text-Based Handwritten Exams",v:"Vice Chancellor's Awards and Academic Sessions, University of Ruhuna",d:"Mar 2026"}],
-projs:[
-{t:"Intelligent Exam Evaluation System",c:"LLM and RAG",p:"Final year project. Researched and built the RAG pipeline and fine-tuned model integration that grades handwritten and digital exam scripts, including the frontend.",k:["Python","PostgreSQL","Prompt engineering","LLMs","RAG","TrOCR"]},
-{t:"Smart Researcher",c:"Agentic AI",p:"A full-stack agentic system that plans, searches the web, reads sources and writes cited research reports, with real-time streaming to the frontend.",k:["Next.js","TypeScript","FastAPI","Python","LangGraph"]},
-{t:"Handwritten Text Recognition System",c:"Computer vision",p:"Model pipeline and frontend for a web app that turns handwritten images and PDFs into digital text.",k:["Python","OpenCV","TrOCR","Image processing","React.js"]},
-{t:"Object Detection App",c:"Computer vision",p:"Full-stack mobile app for object detection with camera or gallery selection and Flutter result visualization.",k:["YOLOv8","FastAPI","OpenCV","Flutter","BLoC"]},
-{t:"Background Music Generator",c:"Deep learning",p:"An LSTM trained on classical piano MIDI data generates note sequences, converted to playable audio in a Streamlit app.",k:["TensorFlow","Keras","LSTM","music21","FluidSynth","Streamlit"]},
-{t:"Brain Tumor Detection",c:"Deep learning",p:"A CNN that classifies brain MRI images.",k:["Python","TensorFlow","Keras","CNN","Pandas","Seaborn"]},
-{t:"Household Energy Consumption Prediction",c:"Machine learning",p:"Predicts household energy use with Linear Regression and KNN models.",k:["Scikit-learn","Pandas","NumPy","Seaborn"]},
-{t:"Online Local Crop Marketplace and Delivery System",c:"Web",p:"Led as project manager and frontend developer on a web platform connecting farmers, sellers and deliverymen.",k:["MongoDB","Express","React.js","Node.js"]}],
-awds:[{t:"IEEE Sri Lanka Section FYP Arena 2025, Finalist",y:"Dec 2025",d:"Our final year project, Intelligent Exam Evaluation System with AI-Powered Analytics, competed in the Information Technology and Computer Science Track. The event was held on 14 December 2025 with the Faculty of Engineering, University of Ruhuna, alongside its Silver Jubilee Exhibition (REXTRO)."},
-{t:"HaXtreme 2.0 Inter-University Coding Competition, 12th place",y:"Oct 2023",d:"Competed as part of Team Algosprint in the contest organized by the Computer Society and ComSoc of the IEEE Student Branch, University of Ruhuna, on 25 October 2023."}]};
-
-const $=id=>document.getElementById(id),el=(h)=>{const d=document.createElement("div");d.innerHTML=h.trim();return d.firstChild};
-$("bio").innerHTML=DATA.bio.map(t=>`<p>${t}</p>`).join("");
-const I={pin:'<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',github:'<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>',linkedin:'<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>'};
-const ic=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`;
-$("avatar").innerHTML=DATA.photo?`<img src="${DATA.photo}" alt="Yasodha Virajani">`:"<div>YV</div>";
-$("info").innerHTML=`<li>${ic("pin")}${DATA.loc}</li><li>${ic("mail")}<a href="mailto:${DATA.email}">${DATA.email}</a></li>`+DATA.links.map(l=>`<li>${ic(l[2])}<a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a></li>`).join("");
-$("cv").href=DATA.cv;
-const tl=a=>a.map(e=>`<div class="item"><h3>${e.t}</h3><div class="meta">${e.o} | ${e.d}</div><ul>${e.b.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
-$("exp").innerHTML=tl(DATA.exp);$("edu").innerHTML=tl(DATA.edu);
-$("pubs").innerHTML=DATA.pubs.map(p=>`<article class="card"><span class="pill">${p.d}</span><h3>${p.t}</h3><p>${p.v}</p></article>`).join("");
-$("skl").innerHTML=DATA.skills.map(s=>`<article class="card"><h3>${s[0]}</h3><div class="tags">${s[1].map(k=>`<span class="tag">${k}</span>`).join("")}</div></article>`).join("");
-$("awds").innerHTML=DATA.awds.map(a=>`<article class="card"><span class="pill">${a.y}</span><h3>${a.t}</h3><p>${a.d}</p></article>`).join("");
-const cats=["All",...new Set(DATA.projs.map(p=>p.c))];
-$("filters").innerHTML=cats.map((c,i)=>`<button type="button" data-c="${c}" aria-pressed="${i==0}">${c}</button>`).join("");
-function drawProjs(c){$("projs").innerHTML=DATA.projs.filter(p=>c=="All"||p.c==c).map(p=>`<article class="card"><h3>${p.t}</h3><p>${p.p}</p><div class="tags">${p.k.map(k=>`<span class="tag">${k}</span>`).join("")}</div>${p.u?`<a class="lnk" href="${p.u}">View on GitHub</a>`:""}</article>`).join("")}
-drawProjs("All");
-$("filters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
-[...$("filters").children].forEach(x=>x.setAttribute("aria-pressed",x==b));drawProjs(b.dataset.c)});
-$("yr").textContent=new Date().getFullYear();
-
-
-/* theme */
-const root=document.documentElement,sys=matchMedia("(prefers-color-scheme: dark)");
-try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t}catch(e){}
-$("theme").addEventListener("click",()=>{const dark=root.dataset.theme?root.dataset.theme=="dark":sys.matches;const n=dark?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}});
-/* constellation background: glowing particles drift upward, link up when close, and move away from the pointer */
-(function(){
-const cv=$("bg"),cx=cv.getContext("2d"),still=matchMedia("(prefers-reduced-motion: reduce)").matches;
-const dpr=Math.min(devicePixelRatio||1,2),m={x:-999,y:-999},pts=[];let W=0,H=0;
-const PAL={dark:["56,189,248","157,140,255","255,143,163"],light:["2,132,199","91,70,224","216,69,106"]};
-const dark=()=>root.dataset.theme?root.dataset.theme=="dark":sys.matches;
-const spawn=any=>({x:Math.random()*W,y:any?Math.random()*H:H+20,r:2+Math.random()*2.5,vx:(Math.random()-.5)*.4,vy:-(.15+Math.random()*.35),ph:Math.random()*6.28,sp:.005+Math.random()*.015,c:Math.floor(Math.random()*3),a:.45+Math.random()*.35});
-function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
-const n=Math.min(Math.round(W*H/16000),70);while(pts.length<n)pts.push(spawn(true));pts.length=n}
-function frame(){
-const d0=dark(),pal=PAL[d0?"dark":"light"],k=d0?1:.75;
-cx.clearRect(0,0,W,H);
-for(const p of pts){
-p.ph+=p.sp;p.x+=p.vx+Math.sin(p.ph)*.25;p.y+=p.vy;
-const dx=p.x-m.x,dy=p.y-m.y,d=Math.hypot(dx,dy);
-if(d<130&&d>0){const f=(130-d)/130*1.5;p.x+=dx/d*f;p.y+=dy/d*f}
-if(p.y<-20||p.x<-30||p.x>W+30)Object.assign(p,spawn(false));
-}
-for(let i=0;i<pts.length;i++){const a=pts[i];
-for(let j=i+1;j<pts.length;j++){const b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-if(d<140){cx.shadowBlur=0;cx.strokeStyle=`rgba(${pal[0]},${(1-d/140)*.3})`;cx.lineWidth=1.1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
-cx.fillStyle=`rgba(${pal[a.c]},${a.a*k})`;cx.shadowColor=`rgba(${pal[a.c]},.8)`;cx.shadowBlur=a.r*2.5;
-cx.beginPath();cx.arc(a.x,a.y,a.r,0,6.283);cx.fill()}
-cx.shadowBlur=0;
-if(!still)requestAnimationFrame(frame)}
-addEventListener("pointermove",e=>{m.x=e.clientX;m.y=e.clientY});
-addEventListener("resize",()=>{size();if(still)frame()});
-$("theme").addEventListener("click",()=>{if(still)frame()});
-size();frame();
-})();
-</script>
+<script src="theme.js"></script>
 </body>
 </html>
