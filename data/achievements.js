@@ -11,6 +11,6 @@ SITE.achievements=[
     "title": "HaXtreme 2.0 Inter-University Coding Competition, 12th place",
     "date": "Oct 2023",
     "description": "Competed as part of Team Algosprint in the contest organized by the Computer Society and ComSoc of the IEEE Student Branch, University of Ruhuna, on 25 October 2023.",
-    "image": ""
+    "image": "images/achievements/Hax.jpg"
   }
 ];

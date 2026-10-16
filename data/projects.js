@@ -3,10 +3,10 @@ window.SITE=window.SITE||{};
 SITE.projects=[
   {
     "title": "Intelligent Exam Evaluation System",
-    "category": "LLM and RAG",
+    "category": "AI & ML",
     "description": "Final year project. Researched and built the RAG pipeline and fine-tuned model integration that grades handwritten and digital exam scripts, including the frontend.",
     "tech": ["Python", "PostgreSQL", "Prompt engineering", "LLMs", "RAG", "TrOCR"],
-    "image": "",
+    "image": "images/projects/exam_evaluation_system.png",
     "link": ""
   },
   {
@@ -14,8 +14,8 @@ SITE.projects=[
     "category": "Agentic AI",
     "description": "A full-stack agentic system that plans, searches the web, reads sources and writes cited research reports, with real-time streaming to the frontend.",
     "tech": ["Next.js", "TypeScript", "FastAPI", "Python", "LangGraph"],
-    "image": "",
-    "link": ""
+    "image": "images/projects/Balloons.jpg",
+    "link": "https://github.com/MYVirajani/Reserach-Assistant-Agent"
   },
   {
     "title": "Handwritten Text Recognition System",
@@ -62,7 +62,7 @@ SITE.projects=[
     "category": "Web",
     "description": "Led as project manager and frontend developer on a web platform connecting farmers, sellers and deliverymen.",
     "tech": ["MongoDB", "Express", "React.js", "Node.js"],
-    "image": "",
+    "image": "images/projects/online_crop.png",
     "link": ""
   }
 ];

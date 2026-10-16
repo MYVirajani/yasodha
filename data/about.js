@@ -1,7 +1,7 @@
 /* About text and technical skills. */
 window.SITE=window.SITE||{};
 SITE.about={
-  "bio": ["Computer Engineering graduate with a strong foundation in AI-based application development. I have built predictive models and added intelligent features to software, with hands-on work in LLMs, RAG pipelines and computer vision.", "I enjoy using AI to solve real-world problems and keep learning the latest techniques."],
+  "bio": ["Computer Engineering graduate with a strong foundation in AI-based application development. I have built predictive models and added intelligent features to software, with hands-on work in LLMs, RAG pipelines and computer vision. I enjoy using AI to solve real-world problems and keep learning the latest techniques."],
   "skills": [
     {
       "group": "Programming languages",
