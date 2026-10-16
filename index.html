@@ -2,44 +2,52 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yasodha Virajani</title>
 <meta name="description" content="Portfolio of Yasodha Virajani, Computer Engineering graduate building AI applications with LLMs, RAG pipelines and computer vision.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script>/* apply saved theme before first paint to avoid a flash */try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
 <header><div class="wrap"><nav aria-label="Main">
-<a class="l" href="#about">About</a><a class="l" href="#experience">Experience</a><a class="l" href="#education">Education</a><a class="l" href="#publications">Publications</a><a class="l" href="#projects">Projects</a><a class="l" href="#awards">Achievements</a>
+<a class="l" href="#about">About</a><a class="l" href="#experience">Experience</a><a class="l" href="#education">Education</a><a class="l" href="#publications">Publications</a><a class="l" href="#projects">Projects</a><a class="l" href="#achievements">Achievements</a>
 <button id="theme" type="button" aria-label="Switch between light and dark theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
 </nav></div></header>
-<main id="top">
+<main>
 <div class="layout">
 <aside class="profile">
 <div class="avatar" id="avatar"></div>
-<h1>Yasodha Virajani</h1>
+<h1 id="name"></h1>
 <hr>
 <ul class="info" id="info"></ul>
-<a class="cv" id="cv" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg> RESUME</a>
+<a class="cv" id="cv" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg> Resume</a>
 </aside>
 <div class="content">
-
 <section id="about"><div class="wrap"><h2>About</h2>
-<div class="about"><div id="bio"></div></div>
+<div id="bio"></div>
 <h3 class="sub">Technical skills</h3><div class="skills" id="skl"></div></div></section>
 <section id="experience"><div class="wrap"><h2>Experience</h2><div class="tl" id="exp"></div></div></section>
 <section id="education"><div class="wrap"><h2>Education</h2><div class="tl" id="edu"></div></div></section>
 <section id="publications"><div class="wrap"><h2>Publications</h2><div class="grid" id="pubs"></div></div></section>
 <section id="projects"><div class="wrap"><h2>Projects</h2><div class="filters" id="filters"></div><div class="grid" id="projs"></div></div></section>
-<section id="awards"><div class="wrap"><h2>Achievements</h2><div class="grid" id="awds"></div></div></section>
+<section id="achievements"><div class="wrap"><h2>Achievements</h2><div class="grid" id="awds"></div></div></section>
 </div></div>
 </main>
 <footer><div class="wrap">&copy; <span id="yr"></span> Yasodha Virajani. Galle, Sri Lanka.</div></footer>
 
+<!-- content: one file per section in /data -->
+<script src="data/profile.js"></script>
+<script src="data/about.js"></script>
+<script src="data/experience.js"></script>
+<script src="data/education.js"></script>
+<script src="data/publications.js"></script>
+<script src="data/projects.js"></script>
+<script src="data/achievements.js"></script>
+<script src="app.js"></script>
 <script src="theme.js"></script>
 </body>
 </html>
