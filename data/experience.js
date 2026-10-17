@@ -37,6 +37,13 @@ SITE.experience={
       "org": "Women In Engineering, IEEE Student Branch of the University of Ruhuna",
       "date": "Aug 2023",
       "bullets": []
+    },
+    {
+      "title": "Group Facilitator, Soft Skills Development Course",
+      "org": "The Career Guidance Unit of the University of Ruhuna",
+      "date": "Oct 2023",
+      "bullets": []
     }
+
   ]
 };
