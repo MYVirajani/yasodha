@@ -19,7 +19,9 @@ $("skl").innerHTML=S.about.skills.map(g=>`<div class="skgroup"><h4>${g.group}</h
 
 /* experience and education */
 const tl=a=>a.map(e=>`<div class="item"><h3>${e.title}</h3><div class="meta">${e.org} | ${e.date}</div><ul>${e.bullets.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
-$("exp").innerHTML=tl(S.experience);
+$("exp").innerHTML=tl(S.experience.industrial);
+$("vol").innerHTML=tl(S.experience.volunteer);
+$("vol-wrap").hidden=!S.experience.volunteer.length; /* hide the sub-section while it is empty */
 $("edu").innerHTML=tl(S.education);
 
 /* publications and achievements (image and link are optional) */

@@ -46,6 +46,8 @@ section{padding:44px 0;border-top:1px solid var(--line)}
 section>.wrap>h2{font-size:1.4rem;margin-bottom:22px;border-left:4px solid var(--accent);padding-left:12px}
 #bio p{margin:0 0 12px;max-width:70ch;color:var(--muted)}
 .sub{font-size:1.1rem;margin:30px 0 18px}
+h2+.sub{margin-top:0}
+#vol-wrap{margin-top:32px}
 .skills{display:grid;gap:20px}
 .skgroup h4{font-size:.98rem;margin:0 0 10px}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
