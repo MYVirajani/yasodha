@@ -5,7 +5,7 @@ SITE.achievements=[
     "title": "IEEE Sri Lanka Section FYP Arena 2025, Finalist",
     "date": "Dec 2025",
     "description": "Our final year project, Intelligent Exam Evaluation System with AI-Powered Analytics, competed in the Information Technology and Computer Science Track. The event was held on 14 December 2025 with the Faculty of Engineering, University of Ruhuna, alongside its Silver Jubilee Exhibition (REXTRO).",
-    "image": ""
+    "image": "images/achievements/arena.jpeg"
   },
   {
     "title": "HaXtreme 2.0 Inter-University Coding Competition, 12th place",
