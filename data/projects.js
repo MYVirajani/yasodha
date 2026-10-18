@@ -11,7 +11,7 @@ SITE.projects=[
   },
   {
     "title": "Smart Researcher",
-    "category": "Agentic AI",
+    "category": "AI & ML",
     "description": "A full-stack agentic system that plans, searches the web, reads sources and writes cited research reports, with real-time streaming to the frontend.",
     "tech": ["Next.js", "TypeScript", "FastAPI", "Python", "LangGraph"],
     "image": "",
@@ -19,7 +19,7 @@ SITE.projects=[
   },
   {
     "title": "Handwritten Text Recognition System",
-    "category": "Computer vision",
+    "category": "AI & ML",
     "description": "Model pipeline and frontend for a web app that turns handwritten images and PDFs into digital text.",
     "tech": ["Python", "OpenCV", "TrOCR", "Image processing", "React.js"],
     "image": "",
@@ -27,7 +27,7 @@ SITE.projects=[
   },
   {
     "title": "Object Detection App",
-    "category": "Computer vision",
+    "category": "AI & ML",
     "description": "Full-stack mobile app for object detection with camera or gallery selection and Flutter result visualization.",
     "tech": ["YOLOv8", "FastAPI", "OpenCV", "Flutter", "BLoC"],
     "image": "",
@@ -35,7 +35,7 @@ SITE.projects=[
   },
   {
     "title": "Background Music Generator",
-    "category": "Deep learning",
+    "category": "AI & ML",
     "description": "An LSTM trained on classical piano MIDI data generates note sequences, converted to playable audio in a Streamlit app.",
     "tech": ["TensorFlow", "Keras", "LSTM", "music21", "FluidSynth", "Streamlit"],
     "image": "",
@@ -43,7 +43,7 @@ SITE.projects=[
   },
   {
     "title": "Brain Tumor Detection",
-    "category": "Deep learning",
+    "category": "AI & ML",
     "description": "A CNN that classifies brain MRI images.",
     "tech": ["Python", "TensorFlow", "Keras", "CNN", "Pandas", "Seaborn"],
     "image": "",
@@ -51,7 +51,7 @@ SITE.projects=[
   },
   {
     "title": "Household Energy Consumption Prediction",
-    "category": "Machine learning",
+    "category": "AI & ML",
     "description": "Predicts household energy use with Linear Regression and KNN models.",
     "tech": ["Scikit-learn", "Pandas", "NumPy", "Seaborn"],
     "image": "",
@@ -64,5 +64,13 @@ SITE.projects=[
     "tech": ["MongoDB", "Express", "React.js", "Node.js"],
     "image": "",
     "link": "https://github.com/Chamindu77/CropMaeketplace"
-  }
+  },
+  {
+    "title": "Playground Booking App",
+    "category": "Mobile",
+    "description": "Full-stack mobile app for booking playgrounds.",
+    "tech": [ "FastAPI", "OpenCV", "Flutter", "BLoC"],
+    "image": "",
+    "link": "https://github.com/MYVirajani/Object_Detection_App"
+  },
 ];
